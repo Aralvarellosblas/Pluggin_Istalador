@@ -31,6 +31,7 @@ public final class Accion implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        //Cuadros de dialogo para pedir los datos
         String so=JOptionPane.showInputDialog(null, "Introduce exe para Windows y deb para Linux");
         String cat=JOptionPane.showInputDialog(null, "Introduce el nombre de la categoria deseada");
         String carp=JOptionPane.showInputDialog(null, "Introduce Ruta de carpeta de destino");
@@ -40,8 +41,9 @@ public final class Accion implements ActionListener {
         String main=JOptionPane.showInputDialog(null, "Introduce Nombre de la clase main del programa");
         String nApp=JOptionPane.showInputDialog(null, "Introduce Nombre de la App");
         String title=JOptionPane.showInputDialog(null, "Introduce Titulo para la App");
+        //Inicio del programa
         try {
-            Runtime rt = Runtime.getRuntime();
+            Runtime rt = Runtime.getRuntime(); //Llamada al la consola
             Process pr = rt.exec("javapackager "
                     + "-deploy "
                     + "-native "+so+" -Bcategory="+cat+" "// Sistema para el que se desea el instalador y categoria
