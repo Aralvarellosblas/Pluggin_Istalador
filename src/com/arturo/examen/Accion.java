@@ -44,14 +44,14 @@ public final class Accion implements ActionListener {
             Runtime rt = Runtime.getRuntime();
             Process pr = rt.exec("javapackager "
                     + "-deploy "
-                    + "-native "+so+" -Bcategory="+cat+" "
+                    + "-native "+so+" -Bcategory="+cat+" "// Sistema para el que se desea el instalador y categoria
                     + "-outdir "+carp+" "// /home/local/DANIELCASTELAO/aralvarellosblas/Documentos/contornos/Hola/Hola "
-                    + "-outfile "+file+" "
+                    + "-outfile "+file+" "// Nombre para el instalador
                     + "-srcdir "+rDist+" "// /home/local/DANIELCASTELAO/aralvarellosblas/Documentos/contornos/Hola/dist "
-                    + "-srcfiles "+jar+" "
-                    + "-appclass "+main+" "
-                    + "-name "+nApp+" "
-                    + "-title "+title);
+                    + "-srcfiles "+jar+" "// nombre del archivo jar
+                    + "-appclass "+main+" "// nombre de la clase main
+                    + "-name "+nApp+" "// nombre de la Aplicacion
+                    + "-title "+title);// titulo Para el instalador
 
             BufferedReader input = new BufferedReader(new InputStreamReader(pr.getInputStream()));
 
